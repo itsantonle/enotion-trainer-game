@@ -26,7 +26,10 @@ export function SplashScreen({ onContinue }: SplashScreenProps) {
       { opacity: 0.5, duration: 0.6, ease: "power1.out" },
       "<"
     );
-    return () => tl.kill();
+    return () => {
+      tl.kill();
+      return undefined;
+    };
   }, []);
 
   return (
